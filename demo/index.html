@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learning to code? Well then Blockly Code is just for you! We have a drag and drop system to make coding fun and simple!">
+  <meta name="keywords" content="blockly code coding block blocks editor">
+  <meta name="author" content="Blockly">
+  <meta property="og:site_name" content="Blockly Code"/>
+  <meta property="og:title" content="Sign In"/>
+  <meta property="og:url" content="https://blocklycode.org"/>
+  <meta property="og:image" content="/img/favicon.png"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:description" content="Learning to code? Well then Blockly Code is just for you! We have a drag and drop system to make coding fun and simple!"/>
+  <link rel="icon" href="/img/favicon.png">
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <title>Sign In - Blockly</title>
+</head>
+<body>
+  <div id="popups"></div>
+  <div class="container">
+    <div class="card-wrapper">
+      <div class="card">
+        <!--<div id="g_id_onload" data-client_id="491517475268-9317r0rp7qq0rekbgvcsato9mq5aprsd.apps.googleusercontent.com" data-context="signin" data-ux_mode="popup" data-login_uri="https://beta.blocklycode.org/oauth2/google/callback/" data-auto_prompt="false"></div>
+          <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="filled_black" data-text="signin_with" data-size="large" data-logo_alignment="left" data-width="400"></div>-->
+        <div class="input-wrapper">
+          <span class="error" id="userCheck"></span>
+          <input type="text" class="input" id="userInput" oninput="validateInput(this)" placeholder="Username">
+        </div>
+        <div class="input-wrapper">
+          <span class="error" id="passCheck"></span>
+          <i class="bx showHide bx-hide bx-show" onclick="showPass(this, 'passInput')"></i>
+          <input type="password" class="input" id="passInput" oninput="validateInput(this)" placeholder="Password">
+        </div>
+        <div class="flex-container">
+          <div class="social-login-wrapper">
+            <a class="social-login-btn" href="/oauth2/discord/login" aria-label="Login with Discord"><i class='bx bxl-discord bx-tada-hover'></i></a>
+            <a class="social-login-btn" href="/oauth2/github/login" aria-label="Login with GitHub"><i class='bx bxl-github bx-tada-hover'></i></a>
+            <button class="social-login-btn" aria-label="Login with Google"><i class='bx bxl-google bx-tada-hover'></i></button>
+          </div>
+          <a class="forgot" href="/forgot">Forgot Password?</a>
+        </div>
+        <button class="btn login" onclick="submit(this)">
+          <div class="loader"></div>
+          <span>Sign In</span>
+        </button>
+      </div>
+      <!-- I need a vaild project ID so I can work on the labs page.... -->
+    </div>
+    <div class="side">
+      <div>
+        <h2>New to Blockly?</h2>
+        <p>Sign up for free today and make your dreams into reality!</p>
+        <a class="btn" href="/signup">Sign Up</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
