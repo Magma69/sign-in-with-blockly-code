@@ -47,3 +47,26 @@ function validateInput(input) {
     }
     btn.classList.remove("loading");
   }
+
+
+  async function sendRequest(path, body) {
+    let token = 'YOUR-BLOCKLY-CODE-CREATOR-TOKEN-HERE'
+    let res = await fetch(`api.blocklycode.org/${path}`, {
+      method: 'POST',
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Content-Type': 'application/json',
+        'Allow': 'application/json',
+        'Authorization': token
+      },
+      body: JSON.stringify(body)
+    }).then(r => r.json());
+    if (res.status == 200) {
+      return res.data
+    } else {
+      return {
+        status: res.status ?? 500,
+        error: res.error,
+      }
+    }
+  }
