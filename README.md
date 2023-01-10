@@ -7,7 +7,7 @@ You can create any HTML and CSS elment you choose, from there just link up the f
 
 ## Setup
 There are not really any required functions but we do strong suggest that you have something like:
-```
+```js
 let result = await sendRequest("/users/login", {
           username: username.value,
           password: password.value,
