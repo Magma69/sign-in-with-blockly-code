@@ -33,20 +33,17 @@ function validateInput(input) {
           document.getElementById("passCheck").innerHTML = "Incorrect Password";
         } else if (result?.token) {
           if (result.ban) {
-            return displayBan(user);
+            return "User is banned form Blockly Code!"
           } else {
-            openPopup("s", "Weclome Back")
             let d = new Date()
             d.setDate(d.getDate() + 7)
             document.cookie = `token=${result.token}; domain=blocklycode.org; expires=${new Date(d)}; path=/; sameSite=Lax;`;
             document.cookie = `type=blockly; domain=blocklycode.org; expires=${new Date(d)}; path=/; sameSite=Lax;`;
-            document.location = '/projects';
           }
         }
       }
     } catch (e) {
-      console.log(e);
-      openPopup("e", "Unexpected error occurred");
+      console.error(e);
     }
     btn.classList.remove("loading");
   }
