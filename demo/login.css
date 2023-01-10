@@ -1,0 +1,100 @@
+html {
+    overflow-x: hidden;
+  }
+  .container {
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    height: 100vh;
+    width: 100%;
+  }
+  .side {
+    width: 350px;
+    background: #111;
+    display: grid;
+    place-items: center;
+    padding: 3rem;
+  }
+  .side h2 {
+    margin-block: 0 10px;
+    font-size: 3rem;
+    text-align: center;
+  }
+  .side .btn {
+    width: 100%;
+    margin-block: 3rem;
+  }
+  .side p {
+    text-align: center;
+    color: #ddd;
+    margin-bottom: 0;
+  }
+  .card-wrapper {
+    display: flex;
+    isolation: isolate;
+  }
+  .card {
+    background: #222;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px #000;
+    margin: auto;
+    padding: 6rem 2rem;
+    position: relative;
+    width: min(500px, 80%);
+  }
+  .card::before {
+    content: '';
+    background: #222 url('/img/favicon.png');
+    background-size: contain;
+    border-radius: 100%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: 1;
+    display: block;
+    height: 10rem;
+    aspect-ratio: 1;
+  }
+  .card h1 {
+    font-size: 3rem;
+    margin-block: 0 1rem;
+  }
+  .card .input-wrapper {
+    margin-block: 2rem;
+  }
+  .card .social-login-btn {
+    background: transparent;
+    border: none;
+    display: inline-block;
+    line-height: 0;
+    margin-inline: 5px;
+    font-size: 2.5rem;
+  }
+  .card .social-login-btn i {
+    font-size: inherit;
+  }
+  .card .forgot {
+    margin: auto 0 auto auto;
+    font-size: 1.4rem;
+    color: var(--secondary);
+  }
+  .card .forgot:hover {
+    text-decoration: underline;
+  }
+  .card .btn.login {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    translate: -50% 100%;
+    background: #222;
+    border: none;
+    min-width: 50%;
+    z-index: -1;
+    border-radius: inherit;
+    box-shadow: 0 0 10px #999;
+  }
+  .card .btn.login:hover {
+    min-width: 90%;
+  }
