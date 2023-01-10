@@ -45,7 +45,7 @@ html {
   }
   .card::before {
     content: '';
-    background: #222 url('/img/favicon.png');
+    background: #222 url('./img/logo.png');
     background-size: contain;
     border-radius: 100%;
     position: absolute;
