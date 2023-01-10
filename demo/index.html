@@ -7,42 +7,39 @@
   <script src="./script.js"></script>
   <title>Sign In With Blockly Code</title>
 </head>
+
 <body>
-  <div id="popups"></div>
-  <div class="container">
-    <div class="card-wrapper">
-      <div class="card">
-        <div class="input-wrapper">
-          <span class="error" id="userCheck"></span>
-          <input type="text" class="input" id="userInput" oninput="validateInput(this)" placeholder="Username">
-        </div>
-        <div class="input-wrapper">
-          <span class="error" id="passCheck"></span>
-          <i class="bx showHide bx-hide bx-show" onclick="showPass(this, 'passInput')"></i>
-          <input type="password" class="input" id="passInput" oninput="validateInput(this)" placeholder="Password">
-        </div>
-        <div class="flex-container">
-          <div class="social-login-wrapper">
-            <a class="social-login-btn" href="/oauth2/discord/login" aria-label="Login with Discord"><i class='bx bxl-discord bx-tada-hover'></i></a>
-            <a class="social-login-btn" href="/oauth2/github/login" aria-label="Login with GitHub"><i class='bx bxl-github bx-tada-hover'></i></a>
-            <button class="social-login-btn" aria-label="Login with Google"><i class='bx bxl-google bx-tada-hover'></i></button>
+    <div id="popups"></div>
+    <div class="container">
+      <div class="card-wrapper">
+        <div class="card">
+          <!--<div id="g_id_onload" data-client_id="491517475268-9317r0rp7qq0rekbgvcsato9mq5aprsd.apps.googleusercontent.com" data-context="signin" data-ux_mode="popup" data-login_uri="https://beta.blocklycode.org/oauth2/google/callback/" data-auto_prompt="false"></div>
+            <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="filled_black" data-text="signin_with" data-size="large" data-logo_alignment="left" data-width="400"></div>-->
+          <div class="input-wrapper">
+            <span class="error" id="userCheck"></span>
+            <input type="text" class="input" id="userInput" oninput="validateInput(this)" placeholder="Username">
           </div>
-          <a class="forgot" href="/forgot">Forgot Password?</a>
+          <div class="input-wrapper">
+            <span class="error" id="passCheck"></span>
+            <i class="bx showHide bx-hide bx-show" onclick="showPass(this, 'passInput')"></i>
+            <input type="password" class="input" id="passInput" oninput="validateInput(this)" placeholder="Password">
+          </div>
+          <button class="btn login" onclick="submit(this)">
+            <div class="loader"></div>
+            <span>Sign In</span>
+          </button>
         </div>
-        <button class="btn login" onclick="submit(this)">
-          <div class="loader"></div>
-          <span>Sign In</span>
-        </button>
+        <!-- I need a vaild project ID so I can work on the labs page.... -->
       </div>
-      <!-- I need a vaild project ID so I can work on the labs page.... -->
-    </div>
-    <div class="side">
-      <div>
-        <h2>New to Blockly?</h2>
-        <p>Sign up for free today and make your dreams into reality!</p>
-        <a class="btn" href="/signup">Sign Up</a>
+      <div class="side">
+        <div>
+          <h2>Need An Account?</h2>
+          <p>Sign up for free today and make your dreams into reality!</p>
+          <a class="btn" href="https://blocklycode.org/signup">Sign Up</a>
+        </div>
       </div>
     </div>
-  </div>
-</body>
+  </body>
+
+
 </html>
